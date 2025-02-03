@@ -6,8 +6,8 @@ variables:
   releaseBranchName: 'release'
 
 schedules:
-- cron: "55 13 * * *"
-  displayName: 'Deploy every day at 1:55 P.M.'
+- cron: "47 13 * * *"
+  displayName: 'Deploy every day at 1:45 P.M.'
   branches:
     include:
     - release
@@ -102,6 +102,7 @@ stages:
               azureSubscription: 'Space Game - web - Multistage'
               appName: '$(WebAppNameDev)'
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
+
 - stage: 'Test'
   displayName: 'Deploy to the test environment'
   dependsOn: Dev
