@@ -5,12 +5,13 @@ variables:
   buildConfiguration: 'Release'
   releaseBranchName: 'release'
 
-schedule:
-- cron: "47 13 * * *"
-  displayName: 'Deploy every day at 1:47 P.M.'
-  branches:
-    include:
-    - master
+  schedule:
+  - cron: "50 13 * * *"
+    displayName: 'Deploy every day at 1:50 P.M.'
+    branches:
+      include:
+      - release
+    always: true
 
 stages:
 - stage: 'Build'
